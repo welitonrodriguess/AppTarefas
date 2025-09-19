@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.tarefas.PrimaryController"
+      spacing="10" alignment="TOP_CENTER" style="-fx-padding: 15;">
+    
+    <Label text="Lista de Tarefas" style="-fx-font-size: 18; -fx-font-weight: bold;" />
+
+    <HBox spacing="10">
+        <TextField fx:id="descricaoField" promptText="Digite a tarefa" />
+        <ComboBox fx:id="categoriaBox" promptText="Categoria" />
+        <DatePicker fx:id="prazoPicker" promptText="Prazo" />
+        <Button text="Adicionar" onAction="#adicionarTarefa"/>
+    </HBox>
+
+    <TableView fx:id="tabelaTarefas" prefHeight="300" prefWidth="600">
+        <columns>
+            <TableColumn fx:id="colDescricao" text="Descrição" prefWidth="200"/>
+            <TableColumn fx:id="colCategoria" text="Categoria" prefWidth="150"/>
+            <TableColumn fx:id="colPrazo" text="Prazo" prefWidth="150"/>
+            <TableColumn fx:id="colConcluida" text="Concluída" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="10">
+        <Button text="Concluir Tarefa" onAction="#concluirTarefa"/>
+        <Button text="Remover Tarefa" onAction="#removerTarefa"/>
+    </HBox>
+</VBox>
